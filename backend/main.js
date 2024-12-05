@@ -1,7 +1,18 @@
 import express from "express";
+import dotenv from "dotenv";
+import { connectDB } from "./config/db.js";
+import movieRoutes from "./route/movie.route.js"
+
+dotenv.config();
 
 const app = express();
+const port = process.env.PORT || 5000;
 
-app.listen(5000, ()=>{
-    console.warn('port started at 5000, http://localhost:5000')
+app.use(express.json());// allows to accept JSON data in body
+
+app.use("/api/movies", movieRoutes)
+
+app.listen(port, ()=>{
+    connectDB();
+    console.warn('port started, http://localhost:' + port)
 })
