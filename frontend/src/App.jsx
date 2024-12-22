@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom"
 import Navbar from "./components/Navbar"
 import HomePage from "./pages/HomePage"
 import CreatePage from "./pages/CreatePage"
+import AccountPage from "./pages/AccountPage"
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage/>}/>
           <Route path="/create" element={<CreatePage/>}/>
+          <Route path="/account" element={<AccountPage/>}/>
         </Routes>
       </Box>
   )

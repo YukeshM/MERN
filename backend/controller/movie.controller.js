@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 
 export const createMovie =  async (req, res)=>{
     const movie = req.body;
-    console.warn("movie: ", movie)
+    
     if(!movie.name || !movie.image || !movie.rating || !movie.platform){
         return res.status(400).json({success : false, message: "Please provide all fields!"})
     }
